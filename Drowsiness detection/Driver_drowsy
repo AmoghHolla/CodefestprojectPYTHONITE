@@ -23,4 +23,34 @@ class DrowsinessDetector:
         self.lpred=[]
         self.r_eye_label = None
         self.l_eye_label = None
+        self.thick = 2
+
+        self.face_classifier = cv.CascadeClassifier('haar cascade files\haarcascade_frontalface_alt.xml')
+        self.leye_classifier = cv.CascadeClassifier('haar cascade files\haarcascade_lefteye_2splits.xml')
+        self.reye_classifier = cv.CascadeClassifier('haar cascade files\haarcascade_righteye_2splits.xml')
+
+    def process_eyes(self, eye):
+        eye = cv.cvtColor(eye,cv.COLOR_BGR2GRAY)
+        eye = cv.resize(eye(24,24))
+        eye = eye/255
+        eye = eye.reshape(24,24,-1)
+        eye = np.expand_dims(eye, axis = 0)
+
+        return eye
+
+    def predict(self,eye):
+        axis = 1
+
+        prediction = self.model.predict(eye)
+        prediction = np.argmax(prediction,axis=axis)
+
+        if(prediction[0]==1):
+            self.label="Open"
+        if(prediction[0]==0):
+            self.label="Closed"
+        
+        return self.label
+
+
+
 
