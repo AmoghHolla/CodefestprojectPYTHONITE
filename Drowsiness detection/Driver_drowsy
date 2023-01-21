@@ -1,0 +1,26 @@
+import cv2 as cv
+import os
+import tensorflow
+import keras
+from keras.models import load_model
+import numpy as np
+from pygame import mixer
+import time
+
+#Class
+class DrowsinessDetector:
+    def  _init_(self):
+        mixer.init()
+        self.sound = mixer.Sound("alarm.wav")
+
+        self.cam = cv.VideoCapture(0)
+        self.font = cv. FONT_HERSHEY_COMPLEX_SMALL
+        self.label = None
+
+        self.model= load_model('models/cnncat2.h5')
+        self.score = 0
+        self.rpred=[]
+        self.lpred=[]
+        self.r_eye_label = None
+        self.l_eye_label = None
+
