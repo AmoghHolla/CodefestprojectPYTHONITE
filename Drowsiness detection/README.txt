@@ -1,4 +1,12 @@
-1. As you all know, in our world, many people easy manage to doze off or feel drowsy while driving for longer periods of time, or when
+Team Name: Pythonite
+Team Leader: Amogh Holla
+
+Team Members: Amogh Holla
+
+Category: JUNIOR
+School: OAKRIDGE, INTERNATIONAL, BENGALURU
+
+As you all know, in our world, many people easy manage to doze off or feel drowsy while driving for longer periods of time, or when
 people come home after long work shifts they tend to feel sleepy. Such incedents dont only can cause severe injuries, but also several
 deaths when such people encounter accidents. This issues has become so huge that around 1 in every 25 people get caught up in such a 
 situation and more that 40% of accidents happen due to this issue.
